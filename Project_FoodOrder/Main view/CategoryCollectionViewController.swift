@@ -15,7 +15,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         var categoryArray: [Category] = []
         
         private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
-    private let itemPerRow: CGFloat = 3.5
+    private let itemPerRow: CGFloat = 3
     
     //MARK: View lifecycle
     
