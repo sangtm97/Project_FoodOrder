@@ -188,21 +188,68 @@
             </objects>
             <point key="canvasLocation" x="3566.666666666667" y="-344.19642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Items-->
         <scene sceneID="Ot7-Tf-Dut">
             <objects>
-                <viewController id="6A2-sF-2UD" sceneMemberID="viewController">
+                <viewController id="6A2-sF-2UD" customClass="AddItemViewController" customModule="Project_FoodOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XW8-bP-ndg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YjE-Aw-JV7">
+                                <rect key="frame" x="20" y="110" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSe-NW-rgc">
+                                <rect key="frame" x="20" y="152" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4SD-hv-CE8">
+                                <rect key="frame" x="20" y="196" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4Dc-Nr-Yjg"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-uO-R7M">
+                                <rect key="frame" x="20" y="350" width="74" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="Ual-s4-4Im"/>
+                                    <constraint firstAttribute="height" constant="30" id="wFj-ny-xr5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Camera"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2O1-wi-uTe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FSe-NW-rgc" firstAttribute="top" secondItem="YjE-Aw-JV7" secondAttribute="bottom" constant="8" id="0d5-7I-n5q"/>
+                            <constraint firstItem="oL7-uO-R7M" firstAttribute="top" secondItem="4SD-hv-CE8" secondAttribute="bottom" constant="25" id="1ca-fj-Xqt"/>
+                            <constraint firstItem="2O1-wi-uTe" firstAttribute="trailing" secondItem="FSe-NW-rgc" secondAttribute="trailing" constant="20" id="58M-YT-kNt"/>
+                            <constraint firstItem="2O1-wi-uTe" firstAttribute="trailing" secondItem="YjE-Aw-JV7" secondAttribute="trailing" constant="20" id="72f-MX-5j1"/>
+                            <constraint firstItem="FSe-NW-rgc" firstAttribute="top" secondItem="YjE-Aw-JV7" secondAttribute="bottom" constant="8" id="Inj-3q-xrm"/>
+                            <constraint firstItem="2O1-wi-uTe" firstAttribute="trailing" secondItem="4SD-hv-CE8" secondAttribute="trailing" constant="20" id="Jei-uh-fNv"/>
+                            <constraint firstItem="YjE-Aw-JV7" firstAttribute="top" secondItem="2O1-wi-uTe" secondAttribute="top" constant="22" id="NG9-gw-hEy"/>
+                            <constraint firstItem="YjE-Aw-JV7" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="QAq-Do-bW1"/>
+                            <constraint firstItem="4SD-hv-CE8" firstAttribute="top" secondItem="FSe-NW-rgc" secondAttribute="bottom" constant="10" id="d9m-Dd-3or"/>
+                            <constraint firstItem="FSe-NW-rgc" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="fQR-pU-Tvo"/>
+                            <constraint firstItem="4SD-hv-CE8" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="i7W-3g-R0j"/>
+                            <constraint firstItem="oL7-uO-R7M" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="k6b-08-hMu"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oUC-3f-3Uf"/>
+                    <navigationItem key="navigationItem" title="Add Items" id="oUC-3f-3Uf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ye0-bt-sdK"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSU-xt-jND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4454" y="-323"/>
+            <point key="canvasLocation" x="4452.1739130434789" y="-323.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Gqw-IK-xBu">
@@ -244,8 +291,14 @@
     </scenes>
     <resources>
         <image name="picture" width="256" height="256"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
