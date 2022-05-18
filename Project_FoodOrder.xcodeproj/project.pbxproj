@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0EFB1EEF9B3E214B964DC3B7 /* Pods_Project_FoodOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA30425EDBC2E95A9E5B2322 /* Pods_Project_FoodOrder.framework */; };
+		3D4C36AE2834A2D30050C6CD /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36AD2834A2D30050C6CD /* CategoryCollectionViewController.swift */; };
+		3D4C36B02834A3FE0050C6CD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36AF2834A3FE0050C6CD /* CategoryCollectionViewCell.swift */; };
+		3D4C36B22834A5330050C6CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D4C36B12834A5330050C6CD /* GoogleService-Info.plist */; };
+		3D4C36B42834A6440050C6CD /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36B32834A6440050C6CD /* FirebaseCollectionReference.swift */; };
+		3D4C36B92834A7D10050C6CD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36B82834A7D10050C6CD /* Category.swift */; };
+		3D4C36BC2834A8A90050C6CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BB2834A8A90050C6CD /* Constants.swift */; };
+		3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BD2834CE7F0050C6CD /* ItemsTableViewController.swift */; };
+		3D4C36C02834D24D0050C6CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BF2834D24D0050C6CD /* Item.swift */; };
 		3D6C4D282832A80100B4F423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C4D272832A80100B4F423 /* AppDelegate.swift */; };
 		3D6C4D2A2832A80100B4F423 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C4D292832A80100B4F423 /* SceneDelegate.swift */; };
 		3D6C4D2C2832A80100B4F423 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C4D2B2832A80100B4F423 /* ViewController.swift */; };
@@ -41,6 +49,14 @@
 		00EDE0FDD671562EB96569C8 /* Pods_Project_FoodOrder_Project_FoodOrderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_FoodOrder_Project_FoodOrderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE03FC509ADD2F2C4E7C461 /* Pods-Project_FoodOrder-Project_FoodOrderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrder-Project_FoodOrderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrder-Project_FoodOrderUITests/Pods-Project_FoodOrder-Project_FoodOrderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		32117FB7E56FB22F173B6A23 /* Pods-Project_FoodOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrder.debug.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrder/Pods-Project_FoodOrder.debug.xcconfig"; sourceTree = "<group>"; };
+		3D4C36AD2834A2D30050C6CD /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		3D4C36AF2834A3FE0050C6CD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D4C36B12834A5330050C6CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D4C36B32834A6440050C6CD /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
+		3D4C36B82834A7D10050C6CD /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3D4C36BB2834A8A90050C6CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3D4C36BD2834CE7F0050C6CD /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		3D4C36BF2834D24D0050C6CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3D6C4D242832A80100B4F423 /* Project_FoodOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_FoodOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6C4D272832A80100B4F423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6C4D292832A80100B4F423 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +117,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3D4C36B52834A73F0050C6CD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3D4C36B32834A6440050C6CD /* FirebaseCollectionReference.swift */,
+				3D4C36BB2834A8A90050C6CD /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3D4C36B62834A7590050C6CD /* Main view */ = {
+			isa = PBXGroup;
+			children = (
+				3D4C36AD2834A2D30050C6CD /* CategoryCollectionViewController.swift */,
+				3D4C36BD2834CE7F0050C6CD /* ItemsTableViewController.swift */,
+			);
+			path = "Main view";
+			sourceTree = "<group>";
+		};
+		3D4C36B72834A76F0050C6CD /* Custome cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D4C36AF2834A3FE0050C6CD /* CategoryCollectionViewCell.swift */,
+			);
+			path = "Custome cells";
+			sourceTree = "<group>";
+		};
+		3D4C36BA2834A7F00050C6CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D4C36B82834A7D10050C6CD /* Category.swift */,
+				3D4C36BF2834D24D0050C6CD /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3D6C4D1B2832A80100B4F423 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +177,7 @@
 		3D6C4D262832A80100B4F423 /* Project_FoodOrder */ = {
 			isa = PBXGroup;
 			children = (
+				3D4C36B12834A5330050C6CD /* GoogleService-Info.plist */,
 				3D6C4D272832A80100B4F423 /* AppDelegate.swift */,
 				3D6C4D292832A80100B4F423 /* SceneDelegate.swift */,
 				3D6C4D2B2832A80100B4F423 /* ViewController.swift */,
@@ -133,6 +185,10 @@
 				3D6C4D302832A82700B4F423 /* Assets.xcassets */,
 				3D6C4D322832A82700B4F423 /* LaunchScreen.storyboard */,
 				3D6C4D352832A82700B4F423 /* Info.plist */,
+				3D4C36B62834A7590050C6CD /* Main view */,
+				3D4C36B72834A76F0050C6CD /* Custome cells */,
+				3D4C36B52834A73F0050C6CD /* Helpers */,
+				3D4C36BA2834A7F00050C6CD /* Model */,
 			);
 			path = Project_FoodOrder;
 			sourceTree = "<group>";
@@ -165,7 +221,6 @@
 				8855C02288102C3F9AC9FD04 /* Pods-Project_FoodOrderTests.debug.xcconfig */,
 				5B3F9FAF19FC789B89751010 /* Pods-Project_FoodOrderTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6C4D342832A82700B4F423 /* LaunchScreen.storyboard in Resources */,
+				3D4C36B22834A5330050C6CD /* GoogleService-Info.plist in Resources */,
 				3D6C4D312832A82700B4F423 /* Assets.xcassets in Resources */,
 				3D6C4D2F2832A80100B4F423 /* Main.storyboard in Resources */,
 			);
@@ -407,9 +463,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4C36C02834D24D0050C6CD /* Item.swift in Sources */,
+				3D4C36B42834A6440050C6CD /* FirebaseCollectionReference.swift in Sources */,
 				3D6C4D2C2832A80100B4F423 /* ViewController.swift in Sources */,
+				3D4C36B02834A3FE0050C6CD /* CategoryCollectionViewCell.swift in Sources */,
 				3D6C4D282832A80100B4F423 /* AppDelegate.swift in Sources */,
+				3D4C36AE2834A2D30050C6CD /* CategoryCollectionViewController.swift in Sources */,
+				3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */,
 				3D6C4D2A2832A80100B4F423 /* SceneDelegate.swift in Sources */,
+				3D4C36B92834A7D10050C6CD /* Category.swift in Sources */,
+				3D4C36BC2834A8A90050C6CD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

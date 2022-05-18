@@ -9,9 +9,14 @@ import UIKit
 
 class ItemsTableViewController: UITableViewController {
 
+    //MARK: Vars
+    var category: Category?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
