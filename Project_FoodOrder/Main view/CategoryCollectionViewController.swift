@@ -38,6 +38,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCollectionViewCell
         cell.generateCell(categoryArray[indexPath.row])
+        cell.layer.cornerRadius = 20.0
         return cell
     }
     
@@ -77,5 +78,18 @@ extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            if let titleCategoryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CategoriesCollectionReusableView", for: indexPath) as? CategoriesCollectionReusableView {
+                titleCategoryView.titleLabel.text = "Categories"
+                return titleCategoryView
+            }
+        default:
+            return UICollectionReusableView()
+        }
+        return UICollectionReusableView()
     }
 }

@@ -8,5 +8,5 @@
 import UIKit
 
 class CategoriesCollectionReusableView: UICollectionReusableView {
-        
+    @IBOutlet weak var titleLabel: UILabel!
 }
