@@ -266,7 +266,7 @@
                     <navigationItem key="navigationItem" id="7DA-Jz-gat">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZuH-GQ-uwF">
                             <connections>
-                                <segue destination="6A2-sF-2UD" kind="show" id="Dbg-0L-X1r"/>
+                                <segue destination="6A2-sF-2UD" kind="show" identifier="itemToAddItemSeg" id="Dbg-0L-X1r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -311,10 +311,14 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="6A2-sF-2UD" eventType="touchUpInside" id="4CD-80-szl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2O1-wi-uTe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="FSe-NW-rgc" firstAttribute="top" secondItem="YjE-Aw-JV7" secondAttribute="bottom" constant="8" id="0d5-7I-n5q"/>
                             <constraint firstItem="oL7-uO-R7M" firstAttribute="top" secondItem="4SD-hv-CE8" secondAttribute="bottom" constant="25" id="1ca-fj-Xqt"/>
@@ -329,12 +333,29 @@
                             <constraint firstItem="4SD-hv-CE8" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="i7W-3g-R0j"/>
                             <constraint firstItem="oL7-uO-R7M" firstAttribute="leading" secondItem="2O1-wi-uTe" secondAttribute="leading" constant="20" id="k6b-08-hMu"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sgY-0j-Upv" appends="YES" id="8tG-s6-4VE"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Items" id="oUC-3f-3Uf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ye0-bt-sdK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ye0-bt-sdK">
+                            <connections>
+                                <action selector="doneBarButtonItemPressed:" destination="6A2-sF-2UD" id="Kry-Qn-0e0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="4SD-hv-CE8" id="23P-bu-ALZ"/>
+                        <outlet property="priceTextField" destination="FSe-NW-rgc" id="MBW-nl-MVx"/>
+                        <outlet property="titleTextField" destination="YjE-Aw-JV7" id="MeL-n8-fdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSU-xt-jND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sgY-0j-Upv">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="6A2-sF-2UD" id="8Mg-Ra-e7n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5362.3188405797109" y="-323.4375"/>
         </scene>

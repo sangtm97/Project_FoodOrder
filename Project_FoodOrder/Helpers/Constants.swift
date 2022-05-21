@@ -6,6 +6,8 @@
 //
 
 import Foundation
+//IDS Keys
+public let KFILEREFERENCE = "gs://projectfoodorder-30274.appspot.com"
 //Firebase Headers
 public let KUSER_PATH = "User"
 public let KCATEGORY_PATH = "Category"
