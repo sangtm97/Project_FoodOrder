@@ -38,3 +38,21 @@ func saveItemToFirestore(_ item: Item){
 func itemDictionaryFrom(_ item: Item) -> NSDictionary{
     return NSDictionary(objects: [item.id, item.categoryId, item.name, item.description, item.price, item.imageLinks], forKeys: [KOBJECTID as NSCopying, KCATEGORYID as NSCopying, KNAME as NSCopying, KDESCRIPTION as NSCopying, KPRICE as NSCopying, KIMAGELINKS as NSCopying] )
 }
+
+
+//MaRK: Download func
+func downloadItemsFromFirebase(_ WithCategoryId: String, completion: @escaping(_ itemArray: [Item]) -> Void){
+    var itemArray: [Item] = []
+    FirebaseReference(.Items).whereField(KCATEGORYID, isEqualTo: WithCategoryId).getDocuments{ (snapshot, error) in
+        guard let snapshot = snapshot else{
+            completion(itemArray)
+            return
+        }
+        if !snapshot.isEmpty{
+            for itemDict in snapshot.documents{
+                itemArray.append(Item(_dictionary: itemDict.data() as NSDictionary))
+            }
+        }
+        completion(itemArray)
+    }
+}
