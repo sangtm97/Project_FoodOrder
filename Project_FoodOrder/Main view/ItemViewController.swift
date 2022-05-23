@@ -62,15 +62,16 @@ class ItemViewController: UIViewController {
     @objc func addToCartAction(){
         
         //Check if user is logged in or show login view
-        downloadCartFromFỉrestore("1234"){ (cart) in
-            if cart == nil{
-                self.createNewCart()
-            }
-            else{
-                cart!.itemIds.append(self.item.id)
-                self.updateCart(cart: cart!, withValue: [KITEMIDS: cart!.itemIds])
-            }
-        }
+//        downloadCartFromFỉrestore("1234"){ (cart) in
+//            if cart == nil{
+//                self.createNewCart()
+//            }
+//            else{
+//                cart!.itemIds.append(self.item.id)
+//                self.updateCart(cart: cart!, withValue: [KITEMIDS: cart!.itemIds])
+//            }
+//        }
+        showLoginView()
     }
     
     //MARK: Add to cart
@@ -104,6 +105,12 @@ class ItemViewController: UIViewController {
                 self.hud.dismiss(afterDelay: 2.0)
             }
         }
+    }
+    
+    //MARK: login
+    private func showLoginView(){
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
     }
 }
 

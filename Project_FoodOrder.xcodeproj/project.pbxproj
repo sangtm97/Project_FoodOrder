@@ -34,6 +34,11 @@
 		3DF4B53828395D97003E963A /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4B53728395D97003E963A /* Downloader.swift */; };
 		3DF59C71283B718000B674F9 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C70283B718000B674F9 /* Cart.swift */; };
 		3DF59C77283BA0C500B674F9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C76283BA0C500B674F9 /* CartViewController.swift */; };
+		3DF59C79283BCC3F00B674F9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C78283BCC3F00B674F9 /* WelcomeViewController.swift */; };
+		3DF59C7B283BD14A00B674F9 /* Muser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C7A283BD14A00B674F9 /* Muser.swift */; };
+		3DF59C7D283C064600B674F9 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C7C283C064600B674F9 /* ProfileTableViewController.swift */; };
+		3DF59C7F283C19E900B674F9 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C7E283C19E900B674F9 /* FinishRegistrationViewController.swift */; };
+		3DF59C82283C299F00B674F9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C81283C299E00B674F9 /* EditProfileViewController.swift */; };
 		717CE6FF935C188AECA68302 /* Pods_Project_FoodOrder_Project_FoodOrderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EDE0FDD671562EB96569C8 /* Pods_Project_FoodOrder_Project_FoodOrderUITests.framework */; };
 		A90C85A95275172DF4CD3082 /* Pods_Project_FoodOrderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB85650B055D43F9A5C5EE /* Pods_Project_FoodOrderTests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +96,11 @@
 		3DF4B53728395D97003E963A /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		3DF59C70283B718000B674F9 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		3DF59C76283BA0C500B674F9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		3DF59C78283BCC3F00B674F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		3DF59C7A283BD14A00B674F9 /* Muser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muser.swift; sourceTree = "<group>"; };
+		3DF59C7C283C064600B674F9 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		3DF59C7E283C19E900B674F9 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		3DF59C81283C299E00B674F9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		5B3F9FAF19FC789B89751010 /* Pods-Project_FoodOrderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrderTests.release.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrderTests/Pods-Project_FoodOrderTests.release.xcconfig"; sourceTree = "<group>"; };
 		74BB85650B055D43F9A5C5EE /* Pods_Project_FoodOrderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_FoodOrderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8855C02288102C3F9AC9FD04 /* Pods-Project_FoodOrderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrderTests.debug.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrderTests/Pods-Project_FoodOrderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +168,8 @@
 				3D694DCD283812E100DECEDD /* CategoriesCollectionReusableView.swift */,
 				3D873918283AB65A0066BE53 /* ItemViewController.swift */,
 				3DF59C76283BA0C500B674F9 /* CartViewController.swift */,
+				3DF59C7C283C064600B674F9 /* ProfileTableViewController.swift */,
+				3DF59C81283C299E00B674F9 /* EditProfileViewController.swift */,
 			);
 			path = "Main view";
 			sourceTree = "<group>";
@@ -178,6 +190,7 @@
 				3D4C36B82834A7D10050C6CD /* Category.swift */,
 				3D4C36BF2834D24D0050C6CD /* Item.swift */,
 				3DF59C70283B718000B674F9 /* Cart.swift */,
+				3DF59C7A283BD14A00B674F9 /* Muser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 				3D6C4D302832A82700B4F423 /* Assets.xcassets */,
 				3D6C4D322832A82700B4F423 /* LaunchScreen.storyboard */,
 				3D6C4D352832A82700B4F423 /* Info.plist */,
+				3DF59C80283C19FA00B674F9 /* Login View */,
 				3D4C36B62834A7590050C6CD /* Main view */,
 				3D4C36B72834A76F0050C6CD /* Custome cells */,
 				3D4C36B52834A73F0050C6CD /* Helpers */,
@@ -239,6 +253,15 @@
 				3D6C4D4B2832A82700B4F423 /* Info.plist */,
 			);
 			path = Project_FoodOrderUITests;
+			sourceTree = "<group>";
+		};
+		3DF59C80283C19FA00B674F9 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				3DF59C78283BCC3F00B674F9 /* WelcomeViewController.swift */,
+				3DF59C7E283C19E900B674F9 /* FinishRegistrationViewController.swift */,
+			);
+			path = "Login View";
 			sourceTree = "<group>";
 		};
 		83CA07B1F3D26E10452D7968 /* Pods */ = {
@@ -496,13 +519,16 @@
 				3D4C36C02834D24D0050C6CD /* Item.swift in Sources */,
 				3D4C36B42834A6440050C6CD /* FirebaseCollectionReference.swift in Sources */,
 				3DF59C71283B718000B674F9 /* Cart.swift in Sources */,
+				3DF59C7D283C064600B674F9 /* ProfileTableViewController.swift in Sources */,
 				3D6C4D2C2832A80100B4F423 /* ViewController.swift in Sources */,
 				3D4C36B02834A3FE0050C6CD /* CategoryCollectionViewCell.swift in Sources */,
 				3D6C4D282832A80100B4F423 /* AppDelegate.swift in Sources */,
+				3DF59C79283BCC3F00B674F9 /* WelcomeViewController.swift in Sources */,
 				3D873917283AB15E0066BE53 /* HelperFunction.swift in Sources */,
 				3D87391B283ABBAE0066BE53 /* ImageCollectionViewCell.swift in Sources */,
 				3D694DCE283812E100DECEDD /* CategoriesCollectionReusableView.swift in Sources */,
 				3D4C36AE2834A2D30050C6CD /* CategoryCollectionViewController.swift in Sources */,
+				3DF59C7F283C19E900B674F9 /* FinishRegistrationViewController.swift in Sources */,
 				3D873915283AA6630066BE53 /* ItemTableViewCell.swift in Sources */,
 				3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */,
 				3DF59C77283BA0C500B674F9 /* CartViewController.swift in Sources */,
@@ -512,6 +538,8 @@
 				3D4C36B92834A7D10050C6CD /* Category.swift in Sources */,
 				3D873919283AB65A0066BE53 /* ItemViewController.swift in Sources */,
 				3D4C36BC2834A8A90050C6CD /* Constants.swift in Sources */,
+				3DF59C7B283BD14A00B674F9 /* Muser.swift in Sources */,
+				3DF59C82283C299F00B674F9 /* EditProfileViewController.swift in Sources */,
 				3D7E01F1283502BB0099649A /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

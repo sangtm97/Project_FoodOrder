@@ -9,81 +9,94 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var finishRegistrationButtonOutlet: UIButton!
+    @IBOutlet weak var purchaseHistoryButtonOutlet: UIButton!
+    
+    //MARK: Vars
+    var editBarButtonOutlet: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        checkLoginStatus()
+        checkOnboardingStatus()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
+    }
+    
+    //MARK: TableView Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //MARK: Helpers
+    private func checkOnboardingStatus(){
+        if Muser.currentUser() != nil {
+            if Muser.currentUser()!.onboard{
+                finishRegistrationButtonOutlet.setTitle("Account is Active", for: .normal)
+                finishRegistrationButtonOutlet.isEnabled = false
+            }
+            else{
+                finishRegistrationButtonOutlet.setTitle("Finish registration", for: .normal)
+                finishRegistrationButtonOutlet.isEnabled = true
+                finishRegistrationButtonOutlet.tintColor = .red
+            }
+        }
+        else{
+            finishRegistrationButtonOutlet.setTitle("logged out", for: .normal)
+            finishRegistrationButtonOutlet.isEnabled = false
+            purchaseHistoryButtonOutlet.isEnabled = false
+        }
+    }
+    private func checkLoginStatus(){
+        if Muser.currentUser() == nil{
+            createRightBarButton(title: "Login")
+        }
+        else{
+            createRightBarButton(title: "Edit")
+        }
+    }
+    
+    
+    private func createRightBarButton(title: String){
+        editBarButtonOutlet = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightBarButtonItemPressed))
+        self.navigationItem.rightBarButtonItem = editBarButtonOutlet
+    }
+    
+    //MARK: IBAction
+    @objc func rightBarButtonItemPressed(){
+        if editButtonItem.title == "Login"{
+            showLoginView()
+        }
+        else{
+            gotoEditProfile()
+        }
+    }
+    
+    private func showLoginView(){
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
+    }
+    
+    private func gotoEditProfile(){
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }
