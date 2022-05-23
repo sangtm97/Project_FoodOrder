@@ -25,3 +25,8 @@ public let KCATEGORYID = "categoryId"
 public let KDESCRIPTION = "description"
 public let KPRICE = "price"
 public let KIMAGELINKS = "imagelinks"
+
+
+//Cart
+public let KOWNERID = "ownerId"
+public let KITEMIDS = "itemIds"

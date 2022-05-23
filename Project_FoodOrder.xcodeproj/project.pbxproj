@@ -32,6 +32,8 @@
 		3D87391B283ABBAE0066BE53 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87391A283ABBAE0066BE53 /* ImageCollectionViewCell.swift */; };
 		3DF4B53628395CFB003E963A /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4B53528395CFB003E963A /* Richability.swift */; };
 		3DF4B53828395D97003E963A /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4B53728395D97003E963A /* Downloader.swift */; };
+		3DF59C71283B718000B674F9 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C70283B718000B674F9 /* Cart.swift */; };
+		3DF59C77283BA0C500B674F9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF59C76283BA0C500B674F9 /* CartViewController.swift */; };
 		717CE6FF935C188AECA68302 /* Pods_Project_FoodOrder_Project_FoodOrderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EDE0FDD671562EB96569C8 /* Pods_Project_FoodOrder_Project_FoodOrderUITests.framework */; };
 		A90C85A95275172DF4CD3082 /* Pods_Project_FoodOrderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB85650B055D43F9A5C5EE /* Pods_Project_FoodOrderTests.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,8 @@
 		3D87391A283ABBAE0066BE53 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DF4B53528395CFB003E963A /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		3DF4B53728395D97003E963A /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		3DF59C70283B718000B674F9 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		3DF59C76283BA0C500B674F9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		5B3F9FAF19FC789B89751010 /* Pods-Project_FoodOrderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrderTests.release.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrderTests/Pods-Project_FoodOrderTests.release.xcconfig"; sourceTree = "<group>"; };
 		74BB85650B055D43F9A5C5EE /* Pods_Project_FoodOrderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_FoodOrderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8855C02288102C3F9AC9FD04 /* Pods-Project_FoodOrderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project_FoodOrderTests.debug.xcconfig"; path = "Target Support Files/Pods-Project_FoodOrderTests/Pods-Project_FoodOrderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				3D7E01F0283502BB0099649A /* AddItemViewController.swift */,
 				3D694DCD283812E100DECEDD /* CategoriesCollectionReusableView.swift */,
 				3D873918283AB65A0066BE53 /* ItemViewController.swift */,
+				3DF59C76283BA0C500B674F9 /* CartViewController.swift */,
 			);
 			path = "Main view";
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				3D4C36B82834A7D10050C6CD /* Category.swift */,
 				3D4C36BF2834D24D0050C6CD /* Item.swift */,
+				3DF59C70283B718000B674F9 /* Cart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 			files = (
 				3D4C36C02834D24D0050C6CD /* Item.swift in Sources */,
 				3D4C36B42834A6440050C6CD /* FirebaseCollectionReference.swift in Sources */,
+				3DF59C71283B718000B674F9 /* Cart.swift in Sources */,
 				3D6C4D2C2832A80100B4F423 /* ViewController.swift in Sources */,
 				3D4C36B02834A3FE0050C6CD /* CategoryCollectionViewCell.swift in Sources */,
 				3D6C4D282832A80100B4F423 /* AppDelegate.swift in Sources */,
@@ -498,6 +505,7 @@
 				3D4C36AE2834A2D30050C6CD /* CategoryCollectionViewController.swift in Sources */,
 				3D873915283AA6630066BE53 /* ItemTableViewCell.swift in Sources */,
 				3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */,
+				3DF59C77283BA0C500B674F9 /* CartViewController.swift in Sources */,
 				3DF4B53828395D97003E963A /* Downloader.swift in Sources */,
 				3D6C4D2A2832A80100B4F423 /* SceneDelegate.swift in Sources */,
 				3DF4B53628395CFB003E963A /* Richability.swift in Sources */,

@@ -27,6 +27,8 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         downloadPicture()
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "shoppingcart"), style: .plain, target: self, action: #selector(self.addToCartAction))]
     }
     
     //MARK: Download image
@@ -50,7 +52,59 @@ class ItemViewController: UIViewController {
             descriptionTextView.text = item.description
         }
     }
-
+    
+    
+    //MARK: IBACtions
+    @objc func backAction(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func addToCartAction(){
+        
+        //Check if user is logged in or show login view
+        downloadCartFromFỉrestore("1234"){ (cart) in
+            if cart == nil{
+                self.createNewCart()
+            }
+            else{
+                cart!.itemIds.append(self.item.id)
+                self.updateCart(cart: cart!, withValue: [KITEMIDS: cart!.itemIds])
+            }
+        }
+    }
+    
+    //MARK: Add to cart
+    private func createNewCart(){
+        let newCart = Cart()
+        newCart.id = UUID().uuidString
+        newCart.ownerId = "1234"
+        newCart.itemIds = [self.item.id]
+        saveCartToFirestore(newCart)
+        
+        self.hud.textLabel.text = "Added to cart!"
+        self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
+    }
+    
+    private func updateCart(cart: Cart, withValue: [String : Any]){
+        updateCartInFirestore(cart, withValue: withValue){ (error) in
+            if error != nil{
+                self.hud.textLabel.text = "Error: \(error!.localizedDescription)"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                
+                print("error updating basket", error!.localizedDescription)
+            }
+            else{
+                self.hud.textLabel.text = "Added to cart!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+    }
 }
 
 extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate{
