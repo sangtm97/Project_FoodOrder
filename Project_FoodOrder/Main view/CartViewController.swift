@@ -33,17 +33,37 @@ class CartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //TODO: Check if user is logged in
-        loadCartFromFirestore()
+        if Muser.currentUser() != nil{
+            loadCartFromFirestore()
+            
+        } else{
+            self.updateTotalLabels(true)
+        }
     }
     
     //Press button check out
     @IBAction func checkoutButtonPressed(_ sender: Any) {
+        if Muser.currentUser()!.onboard{
+            tempFunction()
+            
+            addItemsToPurchaseHistory(self.purchasedItemIds)
+            emptyTheCart()
+            self.hud.textLabel.text = "Thank You for order"
+            self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay:  2.0)
+        }
+        else{
+            self.hud.textLabel.text = "Please complete you profile!"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay:  2.0)
+        }
     }
     
     //MARK: Download cart
     private func loadCartFromFirestore(){
-        downloadCartFromFỉrestore("1234"){ (cart) in
+        downloadCartFromFỉrestore(Muser.currentId()){ (cart) in
             self.cart = cart
             self.getCartItems()        }
     }
@@ -59,6 +79,12 @@ class CartViewController: UIViewController {
     }
     
     //MARK: Helper function
+    
+    func tempFunction(){
+        for item in allItems{
+            purchasedItemIds.append(item.id)
+        }
+    }
     private func updateTotalLabels(_ isEmty: Bool){
         if isEmty{
             totalItemsLabel.text = "0"
@@ -78,6 +104,34 @@ class CartViewController: UIViewController {
             totalPrice += item.price
         }
         return "Total price: " + convertTocurrency(totalPrice)
+    }
+    
+    private func emptyTheCart(){
+        purchasedItemIds.removeAll()
+        allItems.removeAll()
+        tableView.reloadData()
+        
+        cart!.itemIds = []
+        
+        updateCartInFirestore(cart!, withValue: [KITEMIDS : cart!.itemIds]){ (error) in
+            
+            if error != nil{
+                print("Error updating cart ", error!.localizedDescription)
+            }
+            self.getCartItems()
+        }
+    }
+    
+    private func addItemsToPurchaseHistory(_ itemIds: [String]){
+        if Muser.currentUser() != nil{
+            let newItemIds = Muser.currentUser()!.purchasedItemIds + itemIds
+            
+            updateCurrentUserInFirestore(withValues: [KPURCHASEDITEMIDS : newItemIds]) { (error) in
+                if error != nil{
+                    print("Error adding purchased items", error!.localizedDescription)
+                }
+            }
+        }
     }
     
     //MARK: Navigation

@@ -16,6 +16,8 @@
 		3D4C36BC2834A8A90050C6CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BB2834A8A90050C6CD /* Constants.swift */; };
 		3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BD2834CE7F0050C6CD /* ItemsTableViewController.swift */; };
 		3D4C36C02834D24D0050C6CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4C36BF2834D24D0050C6CD /* Item.swift */; };
+		3D55E8EC283CAA2200E84F84 /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55E8EB283CAA2200E84F84 /* PurchasedHistoryTableViewController.swift */; };
+		3D55E8EE283CCEA900E84F84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55E8ED283CCEA900E84F84 /* HomeViewController.swift */; };
 		3D694DCE283812E100DECEDD /* CategoriesCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D694DCD283812E100DECEDD /* CategoriesCollectionReusableView.swift */; };
 		3D6C4D282832A80100B4F423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C4D272832A80100B4F423 /* AppDelegate.swift */; };
 		3D6C4D2A2832A80100B4F423 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C4D292832A80100B4F423 /* SceneDelegate.swift */; };
@@ -72,6 +74,8 @@
 		3D4C36BB2834A8A90050C6CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3D4C36BD2834CE7F0050C6CD /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		3D4C36BF2834D24D0050C6CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		3D55E8EB283CAA2200E84F84 /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
+		3D55E8ED283CCEA900E84F84 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3D694DCD283812E100DECEDD /* CategoriesCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionReusableView.swift; sourceTree = "<group>"; };
 		3D6C4D242832A80100B4F423 /* Project_FoodOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_FoodOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6C4D272832A80100B4F423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				3DF59C76283BA0C500B674F9 /* CartViewController.swift */,
 				3DF59C7C283C064600B674F9 /* ProfileTableViewController.swift */,
 				3DF59C81283C299E00B674F9 /* EditProfileViewController.swift */,
+				3D55E8ED283CCEA900E84F84 /* HomeViewController.swift */,
 			);
 			path = "Main view";
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			children = (
 				3DF59C78283BCC3F00B674F9 /* WelcomeViewController.swift */,
 				3DF59C7E283C19E900B674F9 /* FinishRegistrationViewController.swift */,
+				3D55E8EB283CAA2200E84F84 /* PurchasedHistoryTableViewController.swift */,
 			);
 			path = "Login View";
 			sourceTree = "<group>";
@@ -530,10 +536,12 @@
 				3D4C36AE2834A2D30050C6CD /* CategoryCollectionViewController.swift in Sources */,
 				3DF59C7F283C19E900B674F9 /* FinishRegistrationViewController.swift in Sources */,
 				3D873915283AA6630066BE53 /* ItemTableViewCell.swift in Sources */,
+				3D55E8EE283CCEA900E84F84 /* HomeViewController.swift in Sources */,
 				3D4C36BE2834CE7F0050C6CD /* ItemsTableViewController.swift in Sources */,
 				3DF59C77283BA0C500B674F9 /* CartViewController.swift in Sources */,
 				3DF4B53828395D97003E963A /* Downloader.swift in Sources */,
 				3D6C4D2A2832A80100B4F423 /* SceneDelegate.swift in Sources */,
+				3D55E8EC283CAA2200E84F84 /* PurchasedHistoryTableViewController.swift in Sources */,
 				3DF4B53628395CFB003E963A /* Richability.swift in Sources */,
 				3D4C36B92834A7D10050C6CD /* Category.swift in Sources */,
 				3D873919283AB65A0066BE53 /* ItemViewController.swift in Sources */,

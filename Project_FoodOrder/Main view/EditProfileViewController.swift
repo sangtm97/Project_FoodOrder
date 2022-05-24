@@ -14,6 +14,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
+    @IBOutlet weak var phoneTextField: UITextField!
+    
     //MARK: Vars
     let hud = JGProgressHUD(style: .dark)
     
@@ -28,7 +30,7 @@ class EditProfileViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         dismissKeyboard()
         if textFieldsHaveText() {
-            let withValues = [KFIRSTNAME : nameTextField.text!, KLASTNAME : surnameTextField.text!, KFULLNAME : (nameTextField.text! + "" + surnameTextField.text!), KFULLADDRESS : addressTextField.text!]
+            let withValues = [KFIRSTNAME : nameTextField.text!, KLASTNAME : surnameTextField.text!, KFULLNAME : (nameTextField.text! + "" + surnameTextField.text!), KFULLADDRESS : addressTextField.text!, KPHONE : phoneTextField.text!]
             updateCurrentUserInFirestore(withValues: withValues) { (error) in
                 if error == nil{
                     self.hud.textLabel.text = "Update!"
@@ -55,6 +57,7 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
+        logOutUser()
     }
     
     
@@ -65,6 +68,7 @@ class EditProfileViewController: UIViewController {
             nameTextField.text = currentUser?.firstName
             surnameTextField.text = currentUser?.lastName
             addressTextField.text = currentUser?.fullAddress
+            phoneTextField.text = currentUser?.phone
         }
     }
     
@@ -74,6 +78,17 @@ class EditProfileViewController: UIViewController {
     }
     
     private func textFieldsHaveText() -> Bool{
-        return (nameTextField.text != "" && surnameTextField.text != "" && addressTextField.text != "")
+        return (nameTextField.text != "" && surnameTextField.text != "" && addressTextField.text != "" && phoneTextField.text != "")
+    }
+    
+    private func logOutUser(){
+        Muser.logOutCurrentUser{ (error) in
+            if error == nil{
+                print("logged out")
+                self.navigationController?.popViewController(animated: true)
+            } else{
+                print("error login out", error!.localizedDescription)
+            }
+        }
     }
 }

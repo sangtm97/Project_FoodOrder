@@ -52,6 +52,7 @@ class ProfileTableViewController: UITableViewController {
                 finishRegistrationButtonOutlet.isEnabled = true
                 finishRegistrationButtonOutlet.tintColor = .red
             }
+            purchaseHistoryButtonOutlet.isEnabled = true
         }
         else{
             finishRegistrationButtonOutlet.setTitle("logged out", for: .normal)
@@ -76,7 +77,7 @@ class ProfileTableViewController: UITableViewController {
     
     //MARK: IBAction
     @objc func rightBarButtonItemPressed(){
-        if editButtonItem.title == "Login"{
+        if editBarButtonOutlet.title == "Login"{
             showLoginView()
         }
         else{
@@ -85,18 +86,19 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func showLoginView(){
+        print("login view")
         let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
         self.present(loginView, animated: true, completion: nil)
     }
     
     private func gotoEditProfile(){
-        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
-        self.present(loginView, animated: true, completion: nil)
-    }
-
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        performSegue(withIdentifier: "profileToEditSeg", sender: self)
         
     }
+
+//    // MARK: - Navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    }
 
 }

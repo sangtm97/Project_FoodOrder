@@ -14,6 +14,7 @@ class Muser{
     var fullName: String
     var firstName: String
     var lastName: String
+    var phone: String
     var purchasedItemIds: [String]
     
     var fullAddress: String?
@@ -28,6 +29,7 @@ class Muser{
         fullName = _firstName + "" + _lastName
         fullAddress = ""
         onboard = false
+        phone = ""
         purchasedItemIds = []
     }
     
@@ -74,6 +76,13 @@ class Muser{
         }
         else{
             purchasedItemIds = []
+        }
+        
+        if let phoneNumber = _dictionary[KPHONE]{
+           phone = phoneNumber as! String
+        }
+        else{
+            phone = ""
         }
     }
     
@@ -139,6 +148,18 @@ class Muser{
             completion(error)
         })
     }
+    
+    class  func logOutCurrentUser(completion: @escaping (_ error: Error?) -> Void) {
+        do{
+            try Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: KCURRENTUSER)
+            UserDefaults.standard.synchronize()
+            completion(nil)
+        }
+        catch let error as NSError{
+            completion(error)
+        }
+    }
 }
 
 //MARK: DownloadUser
@@ -180,7 +201,7 @@ func  saveUserLocally(mUserDictionary: NSDictionary) {
 
 //MARK: Helper Function
 func userDictionaryFrom(user: Muser) -> NSDictionary{
-    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onboard, user.purchasedItemIds], forKeys: [KOBJECTID as NSCopying, KEMAIL as NSCopying, KFIRSTNAME as  NSCopying, KLASTNAME as NSCopying, KFULLNAME as NSCopying, KFULLADDRESS as NSCopying, KONBOARD as NSCopying, KPURCHASEDITEMIDS as NSCopying])
+    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onboard, user.purchasedItemIds, user.phone], forKeys: [KOBJECTID as NSCopying, KEMAIL as NSCopying, KFIRSTNAME as  NSCopying, KLASTNAME as NSCopying, KFULLNAME as NSCopying, KFULLADDRESS as NSCopying, KONBOARD as NSCopying, KPURCHASEDITEMIDS as NSCopying, KPHONE as NSCopying])
 }
 
 //MARK: Update user

@@ -10,9 +10,9 @@ import JGProgressHUD
 class ItemViewController: UIViewController {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var priceLabel: UILabel!
     
     //MARK: Vars
     var item: Item!
@@ -27,7 +27,7 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         downloadPicture()
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back-24"), style: .plain, target: self, action: #selector(self.backAction))]
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "shoppingcart"), style: .plain, target: self, action: #selector(self.addToCartAction))]
     }
     
@@ -62,23 +62,27 @@ class ItemViewController: UIViewController {
     @objc func addToCartAction(){
         
         //Check if user is logged in or show login view
-//        downloadCartFromFỉrestore("1234"){ (cart) in
-//            if cart == nil{
-//                self.createNewCart()
-//            }
-//            else{
-//                cart!.itemIds.append(self.item.id)
-//                self.updateCart(cart: cart!, withValue: [KITEMIDS: cart!.itemIds])
-//            }
-//        }
-        showLoginView()
+        if Muser.currentUser() != nil{
+            downloadCartFromFỉrestore(Muser.currentId()){ (cart) in
+            if cart == nil{
+                self.createNewCart()
+            }
+            else{
+                cart!.itemIds.append(self.item.id)
+                self.updateCart(cart: cart!, withValue: [KITEMIDS: cart!.itemIds])
+            }
+          }
+        }
+        else{
+            showLoginView()
+        }
     }
     
     //MARK: Add to cart
     private func createNewCart(){
         let newCart = Cart()
         newCart.id = UUID().uuidString
-        newCart.ownerId = "1234"
+        newCart.ownerId = Muser.currentId()
         newCart.itemIds = [self.item.id]
         saveCartToFirestore(newCart)
         
