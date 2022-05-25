@@ -58,7 +58,7 @@ func saveCategoryToFireBase(_ category: Category){
 
 //MARK: Helpers
 func categoryDictionaryFrom(_ category: Category) -> NSDictionary{
-    return NSDictionary(objects: [category.id, category.name, category.imageName], forKeys: [KOBJECTID as NSCopying, KNAME as NSCopying, KIMAGENAME as NSCopying])
+	    return NSDictionary(objects: [category.id, category.name, category.imageName], forKeys: [KOBJECTID as NSCopying, KNAME as NSCopying, KIMAGENAME as NSCopying])
 }
 
 
