@@ -66,7 +66,7 @@ func categoryDictionaryFrom(_ category: Category) -> NSDictionary{
 func createCategorySet(){
     let pizza = Category(_name: "Pizza", _imageName: "pizza")
     let buger = Category(_name: "Burger", _imageName: "burger")
-    let drink = Category(_name: "Pepsi", _imageName: "pepsi")
+    let drink = Category(_name: "Drink", _imageName: "drink")
     let desert = Category(_name: "Desert", _imageName: "desert")
     
     let arrCategories = [pizza, buger, drink, desert]
