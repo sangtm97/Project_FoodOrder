@@ -38,7 +38,6 @@ func downloadCategoryFronFirebase(completion: @escaping (_ categoryArray: [Categ
         }
         if !snapshot.isEmpty{
             for categoryDic in snapshot.documents{
-                print("Created new category with")
                 categoryArray.append(Category(_dictionary: categoryDic.data() as NSDictionary))
             }
             
